@@ -1,3 +1,4 @@
+import PredictionBtn from '@components/ui/PredictionBtn'
 import Tooltip from '@components/ui/Tooltip'
 import Image from 'next/image'
 import React from 'react'
@@ -46,25 +47,19 @@ const StartGame: React.FC<Props> = ({ makePrediction, bitcoinPrice }) => {
           <p className=" -mt-1 text-xl"> Make a guess</p>
           <Tooltip text="Select either Higher or Lower to make a prediction for the bitcoin price after 1 minute" />
         </div>
-        <div className="mt-3 flex flex-row">
-          <div
+        <div className="mt-3 flex items-center">
+          <PredictionBtn
             onClick={() => {
               makePrediction('higher')
             }}
-            className="flex cursor-pointer select-none flex-col items-center justify-center rounded bg-green-500 px-6 py-2  font-semibold text-slate-100 transition-all duration-300 hover:scale-105"
-          >
-            <AiOutlineArrowUp className="text-4xl font-bold " />
-            Higher
-          </div>
-          <div
+            isHigher
+          />
+          <PredictionBtn
             onClick={() => {
               makePrediction('lower')
             }}
-            className="ml-3 flex cursor-pointer select-none flex-col items-center justify-center rounded bg-red-500 px-6 py-2 font-semibold text-slate-100 transition-all duration-300 hover:scale-105"
-          >
-            <AiOutlineArrowDown className="text-4xl font-bold" />
-            Lower
-          </div>
+            marginLeft={3}
+          />
         </div>
       </div>
     </div>
