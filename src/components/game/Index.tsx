@@ -20,7 +20,7 @@ const Game = () => {
   }
 
   return (
-    <div className="flex w-full  items-center justify-center text-slate-50">
+    <div className="flex h-full w-full text-slate-50">
       {/* If is game state is not active than show the StartGame cmp or else show the GameActive cmp */}
       {!isGameActive ? (
         <StartGame

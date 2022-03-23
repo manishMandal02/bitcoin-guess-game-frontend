@@ -8,16 +8,11 @@ interface Props {
   smallSize?: boolean
 }
 
-const PredictionBtn: React.FC<Props> = ({
-  onClick,
-  isHigher,
-  marginLeft,
-  smallSize,
-}) => {
+const PredictionBtn: React.FC<Props> = ({ onClick, isHigher, smallSize }) => {
   return (
     <div
       onClick={onClick}
-      className={`flex ml-${marginLeft} cursor-pointer select-none flex-col items-center justify-center rounded ${
+      className={`flex cursor-pointer select-none flex-col items-center justify-center rounded ${
         isHigher ? 'bg-green-500' : 'bg-red-500'
       } ${
         !smallSize ? 'px-6' : 'px-2.5'
@@ -32,7 +27,9 @@ const PredictionBtn: React.FC<Props> = ({
         </>
       ) : (
         <>
-          <AiOutlineArrowDown className="text-4xl font-bold" />
+          <AiOutlineArrowDown
+            className={`${!smallSize ? 'text-4xl' : 'text-2xl'} font-bold `}
+          />
           Lower
         </>
       )}

@@ -16,7 +16,7 @@ interface Props {
 
 const StartGame: React.FC<Props> = ({ makePrediction, bitcoinPrice }) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center text-slate-50">
+    <div className="flex w-full w-full flex-col items-center justify-center text-slate-50">
       {/* Bitcoin live price */}
       <div className="-mt-32 flex flex-col items-center justify-center">
         <div className="-ml-3 flex items-center justify-center">
@@ -43,23 +43,24 @@ const StartGame: React.FC<Props> = ({ makePrediction, bitcoinPrice }) => {
       </div>
       {/* Predict buttons with on click handler to start the game after prediction is made */}
       <div className="mt-10 flex flex-col items-center">
-        <div className="flex  select-none items-center ">
+        <div className="flex select-none items-center justify-center ">
           <p className=" -mt-1 text-xl"> Make a guess</p>
           <Tooltip text="Select either Higher or Lower to make a prediction for the bitcoin price after 1 minute" />
         </div>
-        <div className="mt-3 flex items-center">
+        <div className="mt-3 flex items-center ">
           <PredictionBtn
             onClick={() => {
               makePrediction('higher')
             }}
             isHigher
           />
-          <PredictionBtn
-            onClick={() => {
-              makePrediction('lower')
-            }}
-            marginLeft={3}
-          />
+          <div className="ml-3">
+            <PredictionBtn
+              onClick={() => {
+                makePrediction('lower')
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

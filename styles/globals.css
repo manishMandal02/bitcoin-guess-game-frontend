@@ -1,3 +1,270 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.svgSelector > div > svg > path {
+  stroke-width: 9px;
+  color: #3aceb8;
+}
+
+.svgSelector > div > div {
+  font-weight: 600;
+  font-size: 1.66rem;
+  margin-top: -1px;
+  margin-left: -0.5px;
+}
+
+/* Emoji */
+
+.emoji {
+  width: 100px;
+  height: 100px;
+  margin: 15px 15px 40px;
+  background: #ffda6a;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+}
+.emoji:after {
+  position: absolute;
+  bottom: -40px;
+  font-size: 18px;
+  width: 60px;
+  left: calc(50% - 30px);
+  color: #8a8a8a;
+}
+.emoji__face,
+.emoji__eyebrows,
+.emoji__eyes,
+.emoji__mouth {
+  position: absolute;
+}
+.emoji__face:before,
+.emoji__eyebrows:before,
+.emoji__eyes:before,
+.emoji__mouth:before,
+.emoji__face:after,
+.emoji__eyebrows:after,
+.emoji__eyes:after,
+.emoji__mouth:after {
+  position: absolute;
+  content: '';
+}
+.emoji__face {
+  width: inherit;
+  height: inherit;
+}
+
+.emoji--yay:after {
+  animation: yay-reverse 1s linear infinite;
+}
+.emoji--yay .emoji__face {
+  animation: yay 1s linear infinite alternate;
+}
+.emoji--yay .emoji__eyebrows {
+  left: calc(50% - 3px);
+  top: 30px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: -6px 0 0 0 #000000, -36px 0 0 0px #000000, 6px 0 0 0 #000000,
+    36px 0 0 0px #000000;
+}
+.emoji--yay .emoji__eyebrows:before,
+.emoji--yay .emoji__eyebrows:after {
+  width: 36px;
+  height: 18px;
+  border-radius: 60px 60px 0 0;
+  background: transparent;
+  border: 6px solid black;
+  box-sizing: border-box;
+  border-bottom: 0;
+  bottom: 3px;
+  left: calc(50% - 18px);
+}
+.emoji--yay .emoji__eyebrows:before {
+  margin-left: -21px;
+}
+.emoji--yay .emoji__eyebrows:after {
+  margin-left: 21px;
+}
+.emoji--yay .emoji__mouth {
+  top: 35px;
+  background: transparent;
+  left: 50%;
+}
+.emoji--yay .emoji__mouth:after {
+  width: 80px;
+  height: 80px;
+  left: calc(50% - 40px);
+  top: -75px;
+  border-radius: 50%;
+  background: transparent;
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  z-index: 1;
+}
+.emoji--yay .emoji__mouth:before {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+  bottom: 5px;
+  left: calc(50% - 3px);
+  box-shadow: -25px 0 0 0 #000000, 25px 0 0 0 #000000,
+    -35px -2px 30px 10px #d5234c, 35px -2px 30px 10px #d5234c;
+}
+
+.emoji--sad .emoji__face {
+  animation: sad-face 2s ease-in infinite;
+}
+.emoji--sad .emoji__eyebrows {
+  left: calc(50% - 3px);
+  top: 35px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: -40px 9px 0 0 #000000, -25px 0 0 0 #000000, 25px 0 0 0 #000000,
+    40px 9px 0 0 #000000;
+}
+.emoji--sad .emoji__eyebrows:before,
+.emoji--sad .emoji__eyebrows:after {
+  width: 30px;
+  height: 20px;
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  top: 2px;
+  left: calc(50% - 15px);
+}
+.emoji--sad .emoji__eyebrows:before {
+  margin-left: -30px;
+  transform: rotate(-30deg);
+}
+.emoji--sad .emoji__eyebrows:after {
+  margin-left: 30px;
+  transform: rotate(30deg);
+}
+.emoji--sad .emoji__eyes {
+  width: 14px;
+  height: 16px;
+  left: calc(50% - 7px);
+  top: 17px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 25px 0 0 0 #000000, -25px 0 0 0 #000000;
+}
+.emoji--sad .emoji__eyes:after {
+  background: #1797ff;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 0 100% 50% 50Array/0Array 50% 50% 100%;
+  transform-origin: 0% 0%;
+  animation: tear-drop 2s ease-in infinite;
+}
+.emoji--sad .emoji__mouth {
+  width: 60px;
+  height: 80px;
+  left: calc(50% - 30px);
+  top: 10px !important;
+  box-sizing: border-box;
+  border: 6px solid #000000;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  background: transparent;
+  animation: sad-mouth 2s ease-in infinite;
+}
+.emoji--sad .emoji__mouth:after {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+  top: 4px;
+  left: calc(50% - 3px);
+  box-shadow: -18px 0 0 0 #000000, 18px 0 0 0 #000000;
+}
+
+@keyframes yay {
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes sad-face {
+  25%,
+  35% {
+    top: -12px;
+  }
+  55%,
+  95% {
+    top: 8px;
+  }
+  100%,
+  0% {
+    top: 0;
+  }
+}
+@keyframes sad-mouth {
+  25%,
+  35% {
+    transform: scale(0.75);
+    top: 70px;
+  }
+  55%,
+  100%,
+  0% {
+    transform: scale(0.65);
+    top: 80px;
+  }
+}
+@keyframes tear-drop {
+  0%,
+  100% {
+    display: block;
+    left: 35px;
+    top: 15px;
+    transform: rotate(45deg) scale(0);
+  }
+  25% {
+    display: block;
+    left: 35px;
+    transform: rotate(45deg) scale(2);
+  }
+  49.9% {
+    display: block;
+    left: 35px;
+    top: 65px;
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    display: block;
+    left: -35px;
+    top: 15px;
+    transform: rotate(45deg) scale(0);
+  }
+  75% {
+    display: block;
+    left: -35px;
+    transform: rotate(45deg) scale(2);
+  }
+  99.9% {
+    display: block;
+    left: -35px;
+    top: 65px;
+    transform: rotate(45deg) scale(0);
+  }
+}
