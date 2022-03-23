@@ -4,11 +4,10 @@ const Header = () => {
   return (
     <div
       className="mb-10 flex w-full items-center justify-between 
-         py-8 pl-36 pr-72 text-left text-slate-100"
+         py-8 pl-52 pr-80 text-left text-slate-100"
     >
       <h1 className="flex cursor-pointer items-center text-xl font-medium">
         <span className="select-none text-4xl">🅱️</span> Bitcoin Price Predict
-        Game
       </h1>
       {/* Username */}
       <div className="flex items-center  ">
