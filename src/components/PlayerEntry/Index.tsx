@@ -59,7 +59,7 @@ const PlayerEntry = () => {
           <p className="text-center text-2xl font-semibold">
             {isNewUser ? 'Welcome | Sign Up' : 'Welcome back!'}
           </p>
-          {/* Input box with message area */}
+          {/* Input box with message & error area */}
           <InputBoxWithMessage
             title="Username"
             username={username}
