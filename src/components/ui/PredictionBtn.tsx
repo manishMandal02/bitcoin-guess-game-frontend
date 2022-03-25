@@ -5,7 +5,7 @@ interface Props {
   onClick?: () => void
   isHigher?: boolean
   smallSize?: boolean
-  isDisabled: boolean
+  isDisabled?: boolean
 }
 
 const PredictionBtn: React.FC<Props> = ({
