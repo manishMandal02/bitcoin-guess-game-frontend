@@ -9,13 +9,10 @@ const Header = () => {
 
   return (
     <div
-      className={`mb-10 flex w-full items-center ${
-        username ? 'justify-between' : 'justify-center'
-      }
-         py-2 pl-52 pr-80 text-left text-slate-100`}
+      className={`mb-10 flex w-full items-center justify-between py-2 pl-52 pr-80 text-left text-slate-100`}
     >
       <h1 className="flex cursor-pointer items-center text-xl font-medium">
-        <span className="select-none text-4xl">🅱️</span> Bitcoin Price Predict
+        <span className="select-none text-4xl">🅱️</span>Guess Bitcoin Price
       </h1>
       {/* Username */}
       <div className=" -mb-6 -mr-28">
