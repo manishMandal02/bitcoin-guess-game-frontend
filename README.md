@@ -1,21 +1,67 @@
-# Next.js + Tailwind CSS Example
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+# 🅱️ Guess Bitcoin Price
 
-## Deploy your own
+Guess if the 🪙Bitcoin price will go ⬆️Higher or ⬇️Lower in the next 🕐1️ minute.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Demo
+
+👉 https://bitcoin-game.vercel.app
+
+![gifOfHomePage](https://media.giphy.com/media/gbCFYVSSFMkLttnvCd/giphy.gif)
+
+
+## Features
+
+- DarkMode 🌃
+- Live Price Chart 📉
+- Countdown Timer ⏲️
+- Live Emoji reaction 😎
+- Data persisted  in the DB  ✅
+- Confetti celebration if you win 🎊 
+
+
+## Tech Stack
+
+**Client:** NextJs, TailwindCSS, Zustand
+
+**Server:** Node, Express, DynamoDB
+
+
+## Run Locally
+
+Note: optionally you can also run the backend locally 👇        
+Backend: https://github.com/manishMandal02/bitcoin-guess-game-backend
+
+Clone the project
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+  git clone https://github.com/manishmandal02/bitcoin-guess-game-frontend
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherinempeterson.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+
