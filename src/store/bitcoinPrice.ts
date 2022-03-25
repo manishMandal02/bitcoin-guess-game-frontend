@@ -1,23 +1,30 @@
 //
-import create, { SetState, GetState, StoreApi, StateCreator } from 'zustand'
+import create, { SetState } from 'zustand'
 
 import axios from 'axios'
 
 interface BitcoinPriceStateType {
   price: number
+  isLive: boolean
   fetchPrice: () => void
+  setIsLive: (value: boolean) => void
 }
 
 export const useBitcoinPriceStore = create<BitcoinPriceStateType>(
   (set: SetState<BitcoinPriceStateType>) => ({
     price: 0,
+    isLive: true,
+    setIsLive: (value) => set((state) => ({ ...state, isLive: value })),
     fetchPrice: async () => {
-      let data = { price: 0 }
+      let data = 0
       try {
         const { data: resData } = await axios.get(`/bitcoinPrice`)
-        data = resData
-      } catch (error) {}
-      set({ price: data.price || 0 })
+        console.log(resData)
+        data = resData.price
+      } catch (error) {
+        // TODO error handler
+      }
+      set((state) => ({ ...state, price: data }))
     },
   })
 )
