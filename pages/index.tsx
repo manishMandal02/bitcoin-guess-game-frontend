@@ -43,6 +43,13 @@ const Home: NextPage = () => {
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🅱️</text></svg>"
         />
         <meta name="theme-color" content="#34d399" />
+
+        <script
+          id="veonr"
+          dangerouslySetInnerHTML={{
+            __html: `(function () {window._veoping = [];window.VEOPING_ID = "ygHHo7uYu4";d = document;s = d.createElement("script");s.src = "https://api.app.veonr.com/api/pingpong.js";s.async = 1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
+          }}
+        />
       </Head>
       {/* Seo & Open Graph */}
       <NextSeo
