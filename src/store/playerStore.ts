@@ -9,6 +9,7 @@ interface PlayerStateType {
   username: string
   score: number
   isLoading: boolean
+  signOut: () => void
   updateScore: (score: number) => Promise<void>
   fetchPlayer: (username: string) => Promise<void>
   createPlayer: (username: string) => Promise<void>
@@ -19,6 +20,7 @@ export const usePlayerStore = create<PlayerStateType>(
       username: '',
       score: 0,
       isLoading: Boolean(false),
+      signOut: () => set((state) => ({ ...state, username: '', score: 0 })),
       updateScore: async (score) => {
         try {
           set((state) => ({ ...state, isLoading: true }))

@@ -14,7 +14,7 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
   const isGameActive = useBitcoinPriceStore((state) => state.isLive)
   //   Local state - coordinates
   const [coordinates, setCoordinates] = useState<Coordinates>([
-    { x: 0, y: 120, price: initialValue },
+    { x: 0, y: 80, price: initialValue },
   ])
 
   //   update chart fn
@@ -22,19 +22,19 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
     const lastCoord = coordinates[coordinates.length - 1]
     let priceDiff = priceDiffPercentage(initialValue, latestPrice)
     //
-    priceDiff = priceDiff > 50 ? 50 : priceDiff < -55 ? -55 : priceDiff
+    priceDiff = priceDiff > 35 ? 35 : priceDiff < -35 ? -35 : priceDiff
     console.log('diff', priceDiff)
     const newCoord: Coordinate = {
       x:
         coordinates.length <= 1
           ? 0
           : lastCoord.x === 0
-          ? 100
-          : lastCoord.x + 100,
+          ? 102
+          : lastCoord.x + 102,
       y:
         priceDiff <= 0
-          ? Math.floor(120 + Math.abs(priceDiff * 2))
-          : Math.floor(120 - priceDiff * 2),
+          ? Math.floor(80 + Math.abs(priceDiff * 2))
+          : Math.floor(80 - priceDiff * 2),
       price: latestPrice,
     }
     console.log('inside', newCoord)
@@ -51,7 +51,7 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
   return (
     <div className="relative">
       {/* Chart */}
-      <svg width={1050} height={256} className="transition-all duration-200">
+      <svg width={1050} height={175} className="transition-all duration-200">
         <defs>
           <marker
             id="circle"
@@ -77,12 +77,12 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
           strokeWidth="3"
           fill="none"
           className="transition-all duration-200"
-          marker-end="url(#circle)"
+          markerEnd="url(#circle)"
         />
       </svg>
       {/* Reference Line changes bg based on isWinning state */}
       <div
-        className={`absolute top-31 h-1 w-full  opacity-70 ${
+        className={`absolute top-18 h-px w-full  opacity-70 ${
           isWinning ? 'bg-emerald-300' : 'bg-red-300'
         }`}
       ></div>

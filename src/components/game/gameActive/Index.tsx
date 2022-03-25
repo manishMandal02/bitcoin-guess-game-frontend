@@ -38,31 +38,31 @@ const GameActive: React.FC<Props> = ({
         <div>
           <BitcoinPrice isLive={isGameActive} price={bitcoinPrice} />
         </div>
-        <div className="mt-6   h-64 w-full bg-primary-dark">
+        <div className="mt-6   h-44 w-full bg-primary-dark">
           <LiveChart isWinning={isWinning} initialValue={lockedPrice} />
         </div>
       </div>
       {/* Emoji reaction */}
 
       {/* Prediction info */}
-      <div className="relative  mb-16 flex w-full items-center justify-center px-6">
+      <div className="relative mb-16 flex w-full items-center justify-around px-6">
         {isGameActive && (
-          <p className="absolute right-96 left-96  -top-7  text-center text-xl font-medium tracking-wide">
+          <p className="absolute right-72 left-60  -top-4  text-center text-xl font-medium tracking-wider">
             Prediction
           </p>
         )}
-        <div className="absolute left-8 -bottom-10">
+        <div className=" left-8 -bottom-10">
           <CountdownTimer onComplete={onGameEnd} duration={60} />
         </div>
         {/* If game active then show prediction made info or show game over if game ended */}
         {isGameActive ? (
-          <div className="flex items-center justify-around rounded bg-primary-dark p-5 px-6">
+          <div className="-mb-9 flex items-center justify-around rounded bg-primary-dark p-5 px-7">
             {/* Current prediction */}
             <PredictionBtn
               smallSize
               isHigher={prediction === 'higher' ? true : false}
             />
-            <span className="mx-2 text-xl font-semibold tracking-wide">
+            <span className="mx-2.5 text-xl font-semibold tracking-wide">
               than
             </span>
             {/* Locked price */}
@@ -72,25 +72,25 @@ const GameActive: React.FC<Props> = ({
           </div>
         ) : (
           // After Game end message with play again btn
-          <div className="-mb-6 flex flex-col rounded-lg bg-primary-dark py-6 px-16 text-slate-50 ">
+          <div className=" mt-5 flex flex-col rounded-lg bg-primary-dark py-5 px-16 pt-5 pb-6 text-slate-50 ">
             {/* <p className="text-center text-2xl font-semibold">Game Over</p> */}
-            <p className="text-center text-2xl font-medium">
+            <p className="text-center text-xl font-medium">
               {isWinning ? (
                 <>
-                  <p className="mb-2   text-lg">
-                    🎊 &nbsp; CONGRATULATIONS &nbsp; 🎊{' '}
-                  </p>
-                  🏆 YOU WON 🏆 <br />
+                  <span className="mb-3  text-lg">
+                    🎊 &nbsp; CONGRATULATIONS &nbsp; 🎊 <br />
+                  </span>
+                  🏆 YOU WON 🏆
                 </>
               ) : (
                 <>
                   YOU LOST 😥 <br />{' '}
-                  <p className="mt-2   text-lg"> Better Luck Next Time</p>
+                  <span className="mt-2 text-base"> Better Luck Next Time</span>
                 </>
               )}
             </p>
             <button
-              className="mt-6 flex items-center justify-center rounded bg-primary py-2 px-4 font-semibold tracking-wide text-black transition-all duration-300 hover:scale-105"
+              className="mt-3 flex items-center justify-center rounded bg-primary py-1.5 px-1 font-semibold tracking-wide text-black transition-all duration-300 hover:scale-105"
               onClick={onPlayAgain}
             >
               Play Again
@@ -98,7 +98,7 @@ const GameActive: React.FC<Props> = ({
           </div>
         )}
 
-        <div className="absolute -bottom-14 right-2.5">
+        <div className=" -mb-4">
           <EmojiReaction reaction={isWinning ? 'happy' : 'sad'} />
         </div>
       </div>

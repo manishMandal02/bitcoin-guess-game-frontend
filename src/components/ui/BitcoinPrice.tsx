@@ -26,8 +26,9 @@ const BitcoinPrice: React.FC<Props> = ({ price, isLive }) => {
         {price ? (
           <p className="text-2xl font-medium">${price}</p>
         ) : (
-          <div className="w-full px-11">
-            <LoadingSpinner size={7} color={'slate-100'} />
+          <div className="px-3.5">
+            {/* <LoadingSpinner size={7} color={'slate-50'} /> */}
+            <p className="text-lg font-medium tracking-wide">Fetching...</p>
           </div>
         )}
         {isLive && (

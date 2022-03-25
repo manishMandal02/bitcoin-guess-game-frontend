@@ -13,7 +13,7 @@ const CountdownTimer: React.FC<Props> = ({ duration, onComplete }) => {
       <CountdownCircleTimer
         isPlaying
         duration={duration}
-        colors={['#3aceb8', '#3aceb8']}
+        colors={['#34d399', '#34d399']}
         colorsTime={[60, 0]}
         isSmoothColorTransition
         size={85}

@@ -57,7 +57,7 @@ const PlayerEntry = () => {
         <div className="-mb-6 flex flex-col rounded-lg bg-primary-dark py-5 px-16 text-slate-50 ">
           {/* Heading - based new or old users */}
           <p className="text-center text-2xl font-semibold">
-            {isNewUser ? 'Get Ready to Play' : 'Welcome back!'}
+            {isNewUser ? 'Welcome | Sign Up' : 'Welcome back!'}
           </p>
           {/* Input box with message area */}
           <InputBoxWithMessage
@@ -100,13 +100,13 @@ const PlayerEntry = () => {
           )}
           {/* Switch between - new or old user */}
           <p
-            className="mt-1.5 cursor-pointer self-center  text-sm text-slate-200 transition-all duration-200 hover:text-slate-50"
+            className="mt-2.5 cursor-pointer self-center  text-sm text-slate-200 transition-all duration-200 hover:text-slate-50"
             onClick={() => {
               setIsNewUser(!isNewUser)
               setUsername('')
             }}
           >
-            Already a user?
+            {isNewUser ? 'Already a user? click here' : 'New User? click here'}
           </p>
         </div>
       </div>

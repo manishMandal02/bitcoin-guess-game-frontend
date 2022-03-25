@@ -4,7 +4,6 @@ import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 interface Props {
   onClick?: () => void
   isHigher?: boolean
-  marginLeft?: number
   smallSize?: boolean
 }
 
@@ -12,24 +11,20 @@ const PredictionBtn: React.FC<Props> = ({ onClick, isHigher, smallSize }) => {
   return (
     <div
       onClick={onClick}
-      className={`flex cursor-pointer select-none flex-col items-center justify-center rounded ${
-        isHigher ? 'bg-green-500' : 'bg-red-500'
-      } ${
-        !smallSize ? 'px-6' : 'px-2.5'
-      } py-2  font-semibold text-slate-100 transition-all duration-300 hover:scale-105`}
+      className={`flex cursor-pointer select-none  flex-col items-center justify-center rounded text-slate-900 ${
+        isHigher ? 'bg-emerald-300' : 'bg-red-400'
+      } ${!smallSize ? 'px-5 py-2' : 'px-3.5 py-2'}   ${
+        smallSize ? 'text-sm' : 'text-lg'
+      } font-semibold tracking-wide text-slate-100 transition-all duration-300 hover:scale-105`}
     >
       {isHigher ? (
         <>
-          <AiOutlineArrowUp
-            className={`${!smallSize ? 'text-4xl' : 'text-2xl'} font-bold `}
-          />
+          <AiOutlineArrowUp size={smallSize ? 32 : 45} />
           Higher
         </>
       ) : (
         <>
-          <AiOutlineArrowDown
-            className={`${!smallSize ? 'text-4xl' : 'text-2xl'} font-bold `}
-          />
+          <AiOutlineArrowDown size={smallSize ? 36 : 45} />
           Lower
         </>
       )}

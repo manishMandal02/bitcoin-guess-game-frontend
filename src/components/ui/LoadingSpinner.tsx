@@ -7,13 +7,11 @@ interface Props {
 
 const LoadingSpinner: React.FC<Props> = ({ color, size }) => {
   return (
-    <div className="flex items-center justify-center ">
+    <>
       <div
-        className={`h-${size} w-${size} animate-spin rounded-full border-b-2 border-${
-          color ? color : 'black'
-        }  `}
+        className={`h-${size} w-${size} animate-spin rounded-full border-b-2  border-slate-50  `}
       ></div>
-    </div>
+    </>
   )
 }
 

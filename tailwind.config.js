@@ -15,14 +15,14 @@ module.exports = {
         },
       },
       height: {
-        100: '40rem',
+        100: '32rem',
       },
       width: {
         150: '1050px',
       },
       spacing: {
-        22: '5.4rem',
-        31: '7.4rem',
+        18: '4.8rem',
+        18: '4.95rem',
       },
     },
   },

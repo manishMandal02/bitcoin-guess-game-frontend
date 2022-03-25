@@ -16,8 +16,6 @@ const Home: NextPage = () => {
   // Global state - fetch price, isLive, score
   const fetchPrice = useBitcoinPriceStore((state) => state.fetchPrice)
   const isFetchPriceLive = useBitcoinPriceStore((state) => state.isLive)
-  const playerScore = usePlayerStore((state) => state.score)
-  const username = usePlayerStore((state) => state.username)
 
   useEffect(() => {
     fetchPrice()
@@ -36,7 +34,7 @@ const Home: NextPage = () => {
   axios.defaults.baseURL = 'http://localhost:8000/api'
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-start bg-primary-dark py-2">
+    <div className="flex h-screen flex-col items-center justify-start bg-primary-dark py-2">
       <Head>
         <title>Bitcoin Price Predict</title>
         <link
@@ -45,17 +43,16 @@ const Home: NextPage = () => {
         />
       </Head>
       {/* Main root container */}
-      <div className="relative flex  h-full w-full flex-col items-center">
+      <div className=" flex h-screen w-full flex-col  items-center justify-between">
         {/* Header*/}
         <Header />
+        <div className="flex h-full w-full items-center justify-center">
+          {/* Game main container */}
+          <div className="z-20 mt-8 flex h-100 w-150 items-center justify-center rounded bg-slate-800 shadow-md shadow-emerald-400 ">
+            {/* Score board */}
 
-        {/* Game main container */}
-        <div className="relative z-20 mt-12 flex h-100 w-150 items-center justify-center rounded bg-slate-800 shadow-md shadow-emerald-500  ">
-          {/* Score board */}
-          <div className="absolute -top-22 right-1 ">
-            {username && <ScoreBoard score={playerScore} />}
+            <Game />
           </div>
-          <Game />
         </div>
       </div>
     </div>
