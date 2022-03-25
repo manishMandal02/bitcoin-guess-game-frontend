@@ -23,7 +23,6 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
     let priceDiff = priceDiffPercentage(initialValue, latestPrice)
     //
     priceDiff = priceDiff > 35 ? 35 : priceDiff < -35 ? -35 : priceDiff
-    console.log('diff', priceDiff)
     const newCoord: Coordinate = {
       x:
         coordinates.length <= 1
@@ -37,7 +36,6 @@ const LiveChart: React.FC<Props> = ({ initialValue, isWinning }) => {
           : Math.floor(80 - priceDiff * 2),
       price: latestPrice,
     }
-    console.log('inside', newCoord)
     setCoordinates((prevState) => [...prevState, newCoord])
   }
 

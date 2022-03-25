@@ -5,13 +5,23 @@ interface Props {
   onClick?: () => void
   isHigher?: boolean
   smallSize?: boolean
+  isDisabled: boolean
 }
 
-const PredictionBtn: React.FC<Props> = ({ onClick, isHigher, smallSize }) => {
+const PredictionBtn: React.FC<Props> = ({
+  onClick,
+  isHigher,
+  smallSize,
+  isDisabled,
+}) => {
   return (
     <div
-      onClick={onClick}
-      className={`flex cursor-pointer select-none  flex-col items-center justify-center rounded text-slate-900 ${
+      onClick={() => {
+        if (onClick && !isDisabled) onClick()
+      }}
+      className={`flex ${
+        isDisabled ? 'cursor-not-allowed' : 'cursor-pointer'
+      } select-none  flex-col items-center justify-center rounded text-slate-900 ${
         isHigher ? 'bg-emerald-300' : 'bg-red-400'
       } ${!smallSize ? 'px-5 py-2' : 'px-3.5 py-2'}   ${
         smallSize ? 'text-sm' : 'text-lg'

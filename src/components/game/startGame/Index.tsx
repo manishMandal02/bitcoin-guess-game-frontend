@@ -26,12 +26,14 @@ const StartGame: React.FC<Props> = ({ makePrediction, bitcoinPrice }) => {
               makePrediction('higher')
             }}
             isHigher
+            isDisabled={!bitcoinPrice}
           />
           <div className="ml-4">
             <PredictionBtn
               onClick={() => {
                 makePrediction('lower')
               }}
+              isDisabled={!bitcoinPrice}
             />
           </div>
         </div>
