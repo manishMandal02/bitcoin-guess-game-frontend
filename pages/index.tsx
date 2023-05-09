@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
   // axios default backend url
   // axios.defaults.baseURL = 'http://localhost:8000/api'
-  axios.defaults.baseURL = 'https://bitcoin-game.herokuapp.com/api'
+  axios.defaults.baseURL = 'https://bitcoin-game.onrender.com/api'
 
   return (
     <div className="flex h-screen flex-col items-center justify-start bg-primary-dark py-2">
